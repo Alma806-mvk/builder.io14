@@ -1,0 +1,186 @@
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:
+    "Inter",
+    "SF Pro Display",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Roboto",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure content is visible */
+.app-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: transparent;
+}
+
+/* Remove height constraints and overflow scrolling from content areas only */
+.no-scroll-constraint,
+div[class*="overflow-y-auto"]:not([class*="canvas"]):not(.canvas-container),
+div[class*="max-h-"]:not([class*="canvas"]):not(.canvas-container),
+div[class*="h-[calc"]:not([class*="canvas"]):not(.canvas-container) {
+  max-height: none !important;
+  height: auto !important;
+  overflow: visible !important;
+  overflow-y: visible !important;
+}
+
+/* Preserve canvas container constraints for proper functionality */
+section[class*="canvas"],
+div[class*="canvas"],
+.canvas-container,
+[class*="canvasContainer"] {
+  overflow: hidden !important;
+}
+
+/* Prevent page scrolling when interacting with canvas - but allow canvas zoom */
+section[class*="canvas"],
+div[class*="canvas"],
+.canvas-container,
+[class*="canvasContainer"] {
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  isolation: isolate;
+}
+
+/* Stronger prevention for canvas section specifically */
+section[class*="canvas"] {
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+  overscroll-behavior-x: none;
+  touch-action: manipulation;
+  scroll-behavior: auto;
+  will-change: auto;
+}
+
+/* Prevent any scroll bubbling from canvas containers */
+div[ref*="canvasContainer"],
+div[class*="canvasContainer"],
+.canvas-container {
+  overscroll-behavior: none !important;
+  touch-action: manipulation !important;
+  -webkit-overflow-scrolling: auto !important;
+}
+
+/* Hide scrollbars on canvas containers */
+section[class*="canvas"]::-webkit-scrollbar,
+div[class*="canvas"]::-webkit-scrollbar,
+.canvas-container::-webkit-scrollbar,
+[class*="canvasContainer"]::-webkit-scrollbar {
+  display: none;
+}
+
+/* Only preserve horizontal overflow for intentional use cases */
+div[class*="overflow-x-auto"] {
+  overflow-x: auto !important;
+}
+
+/* Canvas-specific containers should maintain their overflow behavior */
+div[class*="overflow-x-auto"]:not([class*="canvas"]):not(.canvas-container) {
+  overflow-y: visible !important;
+}
+
+/* Apply better typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+/* Improve overall readability */
+p,
+span,
+div,
+label {
+  letter-spacing: -0.005em;
+}
+
+/* Ensure content flows naturally */
+.flex-grow {
+  min-height: auto !important;
+}
+
+/* Ensure all text content is readable with the new font */
+.text-lg {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* Ensure text is visible */
+.text-content {
+  color: #fff;
+}
+
+/* Ensure buttons and interactive elements are visible */
+button,
+input,
+select,
+textarea {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Ensure links are visible */
+a {
+  color: #60a5fa;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

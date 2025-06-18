@@ -1,0 +1,493 @@
+/* ========================================
+   Enhanced Generator UI Styles
+   ======================================== */
+
+/* Default Font */
+.generator-form,
+.generator-output,
+.form-field,
+.enhanced-input,
+.enhanced-textarea,
+.enhanced-select {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+/* Form Components */
+.generator-form {
+  @apply flex flex-col space-y-6;
+}
+
+.form-header {
+  @apply border-b border-slate-700/50 pb-6;
+}
+
+.form-section {
+  @apply relative;
+}
+
+/* Enhanced Field Styles */
+.field-label {
+  @apply block text-sm font-semibold text-sky-300 mb-2 tracking-wide;
+}
+
+.field-hint {
+  @apply text-xs text-slate-400 mt-1 italic;
+}
+
+.form-field {
+  @apply relative;
+}
+
+/* Enhanced Input Components */
+.enhanced-input {
+  @apply w-full px-4 py-3 bg-slate-700/80 backdrop-blur-sm border border-slate-600/70 rounded-xl
+         focus:ring-2 focus:ring-sky-500/50 focus:border-sky-500/70 transition-all duration-200
+         text-slate-100 placeholder-slate-400 shadow-sm hover:border-slate-500/80
+         focus:shadow-lg focus:shadow-sky-500/10;
+}
+
+.enhanced-textarea {
+  @apply w-full px-4 py-4 bg-slate-700/80 backdrop-blur-sm border border-slate-600/70 rounded-xl
+         focus:ring-2 focus:ring-sky-500/50 focus:border-sky-500/70 transition-all duration-200
+         text-slate-100 placeholder-slate-400 resize-y min-h-[120px] shadow-sm hover:border-slate-500/80
+         focus:shadow-lg focus:shadow-sky-500/10;
+}
+
+.enhanced-select {
+  @apply w-full px-4 py-3 bg-slate-700/80 backdrop-blur-sm border border-slate-600/70 rounded-xl
+         focus:ring-2 focus:ring-sky-500/50 focus:border-sky-500/70 transition-all duration-200
+         text-slate-100 appearance-none cursor-pointer shadow-sm hover:border-slate-500/80
+         focus:shadow-lg focus:shadow-sky-500/10;
+}
+
+.enhanced-checkbox {
+  @apply h-5 w-5 text-sky-600 bg-slate-700 border-slate-500 rounded-md
+         focus:ring-2 focus:ring-sky-500/50 transition-all duration-200;
+}
+
+.select-icon {
+  @apply absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none;
+}
+
+/* Advanced Options */
+.advanced-options-toggle {
+  @apply w-full flex items-center justify-between p-4 bg-slate-800/40 backdrop-blur-sm
+         border border-slate-600/50 rounded-xl hover:bg-slate-700/50 transition-all duration-200
+         text-left focus:outline-none focus:ring-2 focus:ring-sky-500/50 shadow-sm hover:shadow-md;
+}
+
+.advanced-options-panel {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+/* Style Chips */
+.style-chips {
+  @apply flex flex-wrap gap-2;
+}
+
+.style-chip {
+  @apply px-3 py-2 text-xs font-medium rounded-lg border transition-all duration-200
+         transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2
+         focus:ring-offset-slate-800 shadow-sm hover:shadow-md;
+}
+
+.style-chip:not(.selected) {
+  @apply bg-slate-600/70 border-slate-500/80 text-slate-300 hover:bg-slate-500/80
+         hover:border-slate-400/90 hover:text-slate-200 focus:ring-slate-400/50;
+}
+
+.style-chip.selected {
+  @apply bg-sky-600 border-sky-500 text-white shadow-lg shadow-sky-500/25
+         hover:bg-sky-500 hover:border-sky-400 focus:ring-sky-400;
+}
+
+/* Voice Recording */
+.voice-recording-btn {
+  @apply w-full flex items-center justify-center px-6 py-3 font-medium rounded-xl
+         transition-all duration-200 shadow-md hover:shadow-lg transform hover:scale-[1.02]
+         focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-800;
+}
+
+.voice-recording-btn:not(.recording) {
+  @apply bg-emerald-600 hover:bg-emerald-500 text-white focus:ring-emerald-500;
+}
+
+.voice-recording-btn.recording {
+  @apply bg-red-600 hover:bg-red-500 text-white focus:ring-red-500 animate-pulse;
+}
+
+.recording-pulse {
+  @apply w-2 h-2 bg-red-400 rounded-full animate-pulse;
+}
+
+/* Persona Management */
+.persona-manage-btn {
+  @apply px-3 py-3 bg-sky-600 hover:bg-sky-500 text-white rounded-xl
+         transition-all duration-200 shadow-md hover:shadow-lg transform hover:scale-105
+         focus:outline-none focus:ring-2 focus:ring-sky-500/50;
+}
+
+/* Generate Button */
+.generate-button {
+  @apply relative px-8 py-4 bg-gradient-to-r from-emerald-500 via-sky-500 to-purple-500
+         hover:from-emerald-600 hover:via-sky-600 hover:to-purple-600 text-white font-bold
+         rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300
+         transform hover:scale-[1.02] disabled:opacity-60 disabled:cursor-not-allowed
+         disabled:transform-none disabled:shadow-lg overflow-hidden min-w-[200px];
+}
+
+.generate-button:not(:disabled):hover {
+  @apply shadow-sky-500/30;
+}
+
+.button-content {
+  @apply flex items-center justify-center relative z-10;
+}
+
+.button-text {
+  @apply text-lg tracking-wide;
+}
+
+.loading-indicator {
+  @apply absolute inset-0 flex items-center justify-center bg-gradient-to-r from-emerald-600 via-sky-600 to-purple-600;
+}
+
+.loading-spinner {
+  @apply w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin;
+}
+
+/* Output Components */
+.generator-output {
+  @apply flex flex-col space-y-6;
+}
+
+.output-header {
+  @apply flex-shrink-0;
+}
+
+.expand-collapse-btn {
+  @apply p-2 bg-slate-700/50 hover:bg-slate-600/60 text-slate-300 hover:text-white
+         rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-sky-500/50;
+}
+
+.output-container {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+.output-container.collapsed {
+  @apply max-h-20 overflow-hidden;
+}
+
+.output-container.expanded {
+  @apply max-h-none;
+}
+
+/* Status Indicators */
+.status-loading {
+  @apply p-6 text-center;
+}
+
+.loading-dot {
+  @apply w-2 h-2 bg-sky-400 rounded-full animate-bounce;
+}
+
+.loading-dot.delay-1 {
+  @apply animation-delay-100;
+}
+
+.loading-dot.delay-2 {
+  @apply animation-delay-200;
+}
+
+.status-error {
+  @apply p-4;
+}
+
+/* Content Wrapper */
+.content-wrapper {
+  @apply p-6 min-h-[200px] max-h-[600px] overflow-y-auto;
+  scrollbar-width: thin;
+  scrollbar-color: #475569 #1e293b;
+}
+
+.content-wrapper::-webkit-scrollbar {
+  @apply w-2;
+}
+
+.content-wrapper::-webkit-scrollbar-track {
+  @apply bg-slate-800;
+}
+
+.content-wrapper::-webkit-scrollbar-thumb {
+  @apply bg-slate-600 rounded-full;
+}
+
+.content-wrapper::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-500;
+}
+
+/* A/B Test Results */
+.ab-test-results {
+  @apply p-6 border-t border-slate-700/50;
+}
+
+.results-header {
+  @apply mb-6;
+}
+
+.variations-grid {
+  @apply grid grid-cols-1 lg:grid-cols-2 gap-6;
+}
+
+.variation-card {
+  @apply bg-slate-800/60 backdrop-blur-sm border border-slate-600/50 rounded-xl p-5
+         shadow-lg hover:shadow-xl transition-all duration-200 hover:border-slate-500/70;
+}
+
+.variation-header {
+  @apply mb-4;
+}
+
+.variation-badge {
+  @apply px-3 py-1 bg-sky-600/20 border border-sky-500/30 rounded-full text-xs
+         text-sky-300 flex items-center;
+}
+
+.variation-content {
+  @apply mb-4;
+}
+
+.text-content {
+  @apply p-4 bg-slate-700/50 rounded-lg;
+}
+
+.thumbnail-content {
+  @apply space-y-3;
+}
+
+.content-label {
+  @apply font-semibold text-slate-300 text-sm;
+}
+
+.content-text {
+  @apply text-slate-400 text-sm mt-1;
+}
+
+.variation-footer {
+  @apply space-y-3;
+}
+
+.rationale {
+  @apply text-xs italic text-slate-400 p-3 bg-slate-700/30 rounded-lg;
+}
+
+.copy-variation-btn {
+  @apply px-3 py-2 bg-sky-700 hover:bg-sky-600 text-white text-xs rounded-lg
+         shadow-sm hover:shadow-md transition-all duration-200 flex items-center
+         transform hover:scale-105;
+}
+
+/* Action Buttons */
+.output-actions {
+  @apply border-t border-slate-700/50 pt-6;
+}
+
+.actions-container {
+  @apply flex flex-wrap gap-4 items-center justify-between;
+}
+
+.primary-actions {
+  @apply flex flex-wrap gap-3;
+}
+
+.advanced-actions {
+  @apply flex flex-wrap gap-3;
+}
+
+.action-btn {
+  @apply px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200
+         shadow-sm hover:shadow-md transform hover:scale-105 focus:outline-none
+         focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-800 flex items-center;
+}
+
+.action-btn.primary {
+  @apply bg-emerald-600 hover:bg-emerald-500 text-white focus:ring-emerald-500;
+}
+
+.action-btn.secondary {
+  @apply bg-indigo-600 hover:bg-indigo-500 text-white focus:ring-indigo-500;
+}
+
+.action-btn.dropdown-trigger {
+  @apply bg-slate-600 hover:bg-slate-500 text-slate-200 focus:ring-slate-400;
+}
+
+/* Dropdown Menus */
+.action-dropdown {
+  @apply relative;
+}
+
+.dropdown-menu {
+  @apply absolute bottom-full left-0 mb-2 bg-slate-700 rounded-xl shadow-xl
+         border border-slate-600 py-2 z-20 min-w-[200px] max-h-64 overflow-y-auto;
+  scrollbar-width: thin;
+  scrollbar-color: #475569 #374151;
+}
+
+.dropdown-menu.wide {
+  @apply min-w-[250px];
+}
+
+.dropdown-menu::-webkit-scrollbar {
+  @apply w-2;
+}
+
+.dropdown-menu::-webkit-scrollbar-track {
+  @apply bg-slate-700;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb {
+  @apply bg-slate-500 rounded-full;
+}
+
+.dropdown-item {
+  @apply w-full text-left px-4 py-2 text-sm text-slate-200 hover:bg-sky-600
+         hover:text-white transition-colors duration-150 focus:outline-none
+         focus:bg-sky-600 focus:text-white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .generator-form {
+    @apply space-y-4;
+  }
+
+  .form-section .bg-slate-800\/60 {
+    @apply p-4;
+  }
+
+  .grid.grid-cols-1.sm\:grid-cols-2 {
+    @apply grid-cols-1 gap-4;
+  }
+
+  .grid.grid-cols-1.lg\:grid-cols-2 {
+    @apply grid-cols-1 gap-4;
+  }
+
+  .actions-container {
+    @apply flex-col items-stretch;
+  }
+
+  .primary-actions,
+  .advanced-actions {
+    @apply w-full justify-center;
+  }
+
+  .variations-grid {
+    @apply grid-cols-1;
+  }
+}
+
+/* Animation Utilities */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 3s ease-in-out infinite 1s;
+}
+
+.animate-float-slow {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Focus Visible for Better Accessibility */
+.enhanced-input:focus-visible,
+.enhanced-textarea:focus-visible,
+.enhanced-select:focus-visible {
+  @apply outline-none ring-2 ring-sky-500/50 ring-offset-2 ring-offset-slate-800;
+}
+
+/* Dark Theme Enhancements */
+.dark-gradient-bg {
+  background: linear-gradient(
+    135deg,
+    rgba(15, 23, 42, 0.8) 0%,
+    rgba(30, 41, 59, 0.8) 25%,
+    rgba(51, 65, 85, 0.8) 50%,
+    rgba(30, 41, 59, 0.8) 75%,
+    rgba(15, 23, 42, 0.8) 100%
+  );
+}
+
+/* Subtle Animations */
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Glass Morphism Effect */
+.glass-morphism {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(71, 85, 105, 0.3);
+}
+
+/* Improve contrast for better readability */
+.high-contrast-text {
+  @apply text-slate-100;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Enhanced shadows for depth */
+.enhanced-shadow {
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06),
+    0 0 0 1px rgba(71, 85, 105, 0.1);
+}
+
+.enhanced-shadow-lg {
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05),
+    0 0 0 1px rgba(71, 85, 105, 0.1);
+}
